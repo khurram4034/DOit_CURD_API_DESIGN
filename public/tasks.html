@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--Page title-->
+  <title>DOit</title>
+  <!--Loading Inter font family-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <!--Attaching external stylesheet-->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!--Tob bar-->
+  <div class="top-bar">
+    <img src="logo-white.png" class="logo" onclick="window.location.replace('/')" />
+    <div class="row gap-1">
+      <button class="bar-btn" onclick="window.location.replace('/login-signup'); localStorage.removeItem('_id')">Log out</button>
+    </div>
+  </div>
+  <!--Below Tob bar page content-->
+  <div class="stack flex-grow-1">
+    <div class="stack m-auto w-full" style="max-width: 620px;">
+      <div class="tasks-container">
+        <!--Tasks table-->
+        <table class="w-full tasks-table">
+          <!--Table header-->
+          <thead>
+            <tr style="padding: 8px 0px; text-align: left;">
+              <th>Task</th>
+              <th>Status</th>
+              <th>Operations</th>
+            </tr>
+          </thead>
+          <!--Table body contains all the rows of tasks-->
+          <tbody id="tasks-tbody">
+          </tbody>
+          <!--Table body end-->
+        </table>
+        <!--Table end-->
+        <!--Button for going to add-task page-->
+        <button class="add-task-btn" onclick="window.location.replace('/add-task')">Add</button>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+  <script>
+    window.onload = loadTasks(); // after document is loaded, fetch all tasks
+  </script>
+</body>
+</html>

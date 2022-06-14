@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--Page title-->
+  <title>DOit</title>
+  <!--Loading Inter font family-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <!--Attaching external stylesheet-->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!--Tob bar-->
+  <div class="top-bar">
+    <img src="logo-white.png" class="logo" onclick="window.location.replace('/')" />
+    <div class="row gap-1">
+      <button class="bar-btn" onclick="window.location.replace('/login-signup'); localStorage.removeItem('_id')">Log out</button>
+    </div>
+  </div>
+  <!--Below Tob bar page content-->
+  <div class="stack flex-grow-1">
+    <div class="stack m-auto w-full" style="max-width: 620px;">
+      <!--Task details container div-->
+      <div class="task-container gap-1" style="font-size: 12px;">
+        <h2>Task Details</h2>
+        <!--Task title and its value container-->
+        <div class="flex">
+          <b>Task (Title):</b>&nbsp;
+          <!--Value-->
+          <p id="details-title" style="color: gray;"></p>
+        </div>
+        <div class="row gap-2">
+          <!--Start date and its value container-->
+          <div class="flex">
+            <b>Start Date:</b>&nbsp;
+            <!--Value-->
+            <p id="details-startDate" style="color: gray;"></p>
+          </div>
+          <!--Finish date and its value container-->
+          <div class="flex">
+            <b>Finish Date:</b>&nbsp;
+            <!--Value-->
+            <p id="details-finishDate" style="color: gray;"></p>
+          </div>
+        </div>
+        <!--Description and its value container-->
+        <p>
+          <b>Task Description:</b>
+          <!--Value-->
+          <span style="color: gray;" id="details-description"></span>
+        </p>
+        <!--Task status and its value container-->
+        <div class="flex">
+          <b>Task Status:</b>&nbsp;<div id="details-status"></div>
+        </div>
+        <!--Back button for going back to tasks page-->
+        <button class="back-btn" onclick="window.location.replace('/tasks')">&lt; Back to list</button>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+  <script>
+    window.onload = showTaskDetails();
+  </script>
+</body>
+</html>
